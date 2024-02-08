@@ -13,10 +13,14 @@ clear
 [ -d "${firefoxProfileFolder}" ] && echo "Proeeding to backup INTIAL firefox profiles" && userPrompt || echo "Firefox profile location does not exit, nothing to do, Exiting script" || exit 
 
 # 2. Check if the destination folder exists, if it doesn't CREATE it
-checkDirExistsAndCreate "${firefoxProfileBackupFolder}" 
+checkDirExistsAndCreate "${firefoxProfileBackupFolder}"
  userPrompt
 
 # 3 - Create backup of user's INTIAL profiles .. this should never BE overwritten if the backup location exists and has existing data 
 backupIntialProfiles
+
+echo -e "back in main location" 
+
+backupFFProfiles
 
 userPrompt
